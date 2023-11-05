@@ -1,2 +1,8 @@
 BOT_TOKEN = '6352417669:AAGWfdC0xPM6MBpDt7dCXqk3Qi8oyaRBd7I'
 chat_id = 5155478866
+
+
+
+
+
+

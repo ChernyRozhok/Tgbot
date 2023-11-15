@@ -11,3 +11,12 @@ keyboard = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True
 )
+
+keyboard1 = InlineKeyboardMarkup(inline_keyboard=[
+    [
+        InlineKeyboardButton(
+            text="Анекдот",
+            callback_data="anecdote"
+        )
+    ]
+])

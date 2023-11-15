@@ -8,5 +8,6 @@ bot = Bot(BOT_TOKEN, parse_mode='HTML')
 dp = Dispatcher(bot, loop=loop)
 
 if __name__ == '__main__':
-    from handlers import dp, send_hello
+    from handlers import dp, send_hello, send_anecdote
     executor.start_polling(dp)
+

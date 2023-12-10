@@ -2,8 +2,7 @@ from aiogram.types import Message, ReplyKeyboardRemove, CallbackQuery
 from aiogram.dispatcher.filters import Text, Command
 from aiogram import Bot
 
-from keyboards import keyboard
-from keyboards import keyboard1
+from keyboards import keyboard1, keyboard2
 
 from main import bot, dp
 from config import chat_id
@@ -17,9 +16,15 @@ async def send_hello(dp):
     await dp.answer(text='Здравствуй',
                     reply_markup=keyboard1)
 
+@dp.callback_query_handler(text='greeting')
+async def main_menu(call: CallbackQuery):
+    await call.message.answer(f'Здравствуй')
+    await call.answer()
+
 @dp.callback_query_handler()
 async def send_anecdote(call: CallbackQuery):
-    await call.message.answer(f'{return_joke()}')
+    await call.message.answer(f'{return_joke()}',
+                              reply_markup=keyboard2)
     await call.answer()
 
 

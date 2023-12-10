@@ -3,20 +3,20 @@ from aiogram.utils.callback_data import CallbackData
 
 from anecdotes import anecdote1
 
-keyboard = ReplyKeyboardMarkup(
-    keyboard=[
-        [
-            KeyboardButton(text='Анекдот')
-        ]
-    ],
-    resize_keyboard=True
-)
-
 keyboard1 = InlineKeyboardMarkup(inline_keyboard=[
     [
         InlineKeyboardButton(
             text="Анекдот",
             callback_data="anecdote"
+        )
+    ],
+])
+
+keyboard2 = InlineKeyboardMarkup(inline_keyboard=[
+    [
+        InlineKeyboardButton(
+            text='Главное меню',
+            callback_data='greeting'
         )
     ]
 ])

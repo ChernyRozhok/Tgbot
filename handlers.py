@@ -18,7 +18,8 @@ async def send_hello(dp):
 
 @dp.callback_query_handler(text='greeting')
 async def main_menu(call: CallbackQuery):
-    await call.message.answer(f'Здравствуй')
+    await call.message.answer(f'Здравствуй',
+                              reply_markup=keyboard1)
     await call.answer()
 
 @dp.callback_query_handler()

@@ -18,5 +18,11 @@ keyboard2 = InlineKeyboardMarkup(inline_keyboard=[
             text='Главное меню',
             callback_data='greeting'
         )
+    ],
+    [
+        InlineKeyboardButton(
+            text='Еще анекдот',
+            callback_data='andecdote'
+        )
     ]
 ])

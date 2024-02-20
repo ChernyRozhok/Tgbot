@@ -22,7 +22,7 @@ keyboard2 = InlineKeyboardMarkup(inline_keyboard=[
     [
         InlineKeyboardButton(
             text='Еще анекдот',
-            callback_data='andecdote'
+            callback_data='another_anecdote'
         )
     ]
 ])

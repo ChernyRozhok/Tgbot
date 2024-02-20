@@ -1,6 +1,6 @@
 from aiogram.types import Message, ReplyKeyboardRemove, CallbackQuery
 from aiogram.dispatcher.filters import Text, Command
-from aiogram import Bot
+from aiogram import Bot, types
 
 from keyboards import keyboard1, keyboard2
 
@@ -22,11 +22,17 @@ async def main_menu(call: CallbackQuery):
                               reply_markup=keyboard1)
     await call.answer()
 
-@dp.callback_query_handler()
+
+@dp.callback_query_handler(text='another_anecdote')
 async def send_anecdote(call: CallbackQuery):
     await call.message.answer(f'{return_joke()}',
                               reply_markup=keyboard2)
     await call.answer()
+
+@dp.callback_query_handler(text='anecdote')
+async def send_anecdote(call: types.CallbackQuery):
+    await call.message.edit_text(text=f'{return_joke()}',
+                                 reply_markup=keyboard2)
 
 
 
